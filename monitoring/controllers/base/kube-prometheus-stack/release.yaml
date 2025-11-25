@@ -36,9 +36,9 @@ spec:
         ingressClassName: traefik
 
         hosts:
-          - grafana.morawski.fr
+          - grafana.local.net
 
         tls:
           - secretName: grafana-tls-secret
             hosts:
-              - grafana.morawski.fr
+              - grafana.local.net
