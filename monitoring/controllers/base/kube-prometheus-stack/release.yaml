@@ -8,10 +8,7 @@ spec:
   chart:
     spec:
       chart: kube-prometheus-stack
-      version: "66.2.2"
-
-      # version: "58.x"
-
+      version: "79.x.x"
       sourceRef:
         kind: HelmRepository
         name: kube-prometheus-stack
@@ -34,10 +31,8 @@ spec:
       ingress:
         enabled: true
         ingressClassName: traefik
-
         hosts:
           - grafana.local.net
-
         tls:
           - secretName: grafana-tls-secret
             hosts:
