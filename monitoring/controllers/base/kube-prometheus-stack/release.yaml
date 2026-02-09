@@ -32,8 +32,8 @@ spec:
         enabled: true
         ingressClassName: traefik
         hosts:
-          - grafana.local.net
+          - grafana.net.intra
         tls:
           - secretName: grafana-tls-secret
             hosts:
-              - grafana.local.net
+              - grafana.net.intra
