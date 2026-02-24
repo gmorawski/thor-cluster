@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: audiobookshelf-expose
+  name: audiobookshelf-expose
+  namespace: audiobookshelf
+spec:
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 3005
+    protocol: TCP
+    targetPort: 13378
+  selector:
+    app: audiobookshelf-expose
+  type: LoadBalancer
+
