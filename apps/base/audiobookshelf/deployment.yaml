@@ -7,22 +7,47 @@ spec:
   selector:
     matchLabels:
       app: audiobookshelf
+
   template:
     metadata:
       labels:
         app: audiobookshelf
+
     spec:
-#      securityContext:
-#        fsGroup: 33 # www-data group ID
-#        runAsUser: 33 # www-data user ID
-#        runAsGroup: 33 # www-data group ID
       containers:
         - name: audiobookshelf
           image: ghcr.io/advplyr/audiobookshelf:2.19.0
-          ports:
-            - containerPort: 3005
+
           envFrom:
             - configMapRef:
                 name: audiobookshelf-configmap
+
+          ports:
+            - containerPort: 3005
+              protocol: TCP
+
+          volumeMounts:
+            - mountPath: /config
+              name: audiobookshelf-config
+            - mountPath: /metadata
+              name: audiobookshelf-metadata
+            - mountPath: /audiobooks
+              name: audiobookshelf-audiobooks
+            - mountPath: /podcasts
+              name: audiobookshelf-apodcasts
+
       restartPolicy: Always
-      
+
+      volumes:
+        - name: audiobookshelf-config
+          persistentVolumeClaim:
+            claimName: audiobookshelf-config
+        - name: audiobookshelf-metadata
+          persistentVolumeClaim:
+            claimName: audiobookshelf-metadata
+        - name: audiobookshelf-audiobooks
+          persistentVolumeClaim:
+            claimName: audiobookshelf-audiobooks
+        - name: audiobookshelf-podcasts
+          persistentVolumeClaim:
+            claimName: audiobookshelf-podcasts
