@@ -34,7 +34,7 @@ spec:
             - mountPath: /audiobooks
               name: audiobookshelf-audiobooks
             - mountPath: /podcasts
-              name: audiobookshelf-apodcasts
+              name: audiobookshelf-podcasts
 
       restartPolicy: Always
 
