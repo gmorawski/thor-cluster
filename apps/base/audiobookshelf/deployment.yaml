@@ -23,6 +23,6 @@ spec:
             - containerPort: 3005
           envFrom:
             - configMapRef:
-              name: audiobookshelf-configmap
+                name: audiobookshelf-configmap
       restartPolicy: Always
       
