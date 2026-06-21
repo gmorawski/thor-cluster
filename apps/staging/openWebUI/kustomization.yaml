@@ -3,4 +3,6 @@ kind: Kustomization
 namespace: openwebui
 resources:
   - ../../base/openWebUI/
-  
+  - cloudflare.yaml
+  - cloudflare-secret.yaml
+  - ingress.yaml
