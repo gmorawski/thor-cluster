@@ -35,4 +35,4 @@ spec:
       volumes:
       - name: webui-volume
         persistentVolumeClaim:
-          claimName: openwebui-pvc          
+          claimName: openwebui-data-pvc          
