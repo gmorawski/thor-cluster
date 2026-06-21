@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: openwebui-dpl
+  name: openwebui
   namespace: openwebui
 spec:
   replicas: 1

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: openwebui-data-pvc 
+  name: openwebui-pvc 
   namespace: openwebui
 spec:
   accessModes:
