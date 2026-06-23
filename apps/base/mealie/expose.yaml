@@ -12,7 +12,7 @@ spec:
   ports:
   - port: 8080
     protocol: TCP
-    targetPort: 8080
+    targetPort: 9000
   selector:
     app: mealie-expose
   type: LoadBalancer
