@@ -12,17 +12,11 @@ spec:
       labels:
         app: mealie
     spec:
-      securityContext:
-        fsGroup: 33 # www-data group ID
-        runAsUser: 33 # www-data user ID
-        runAsGroup: 33 # www-data group ID
       containers:
         - name: mealie
           image: ghcr.io/mealie-recipes/mealie:v3.19.0
           ports:
             - containerPort: 8080
-          securityContext:
-            allowPrivilegeEscalation: false
           volumeMounts:
           - mountPath: /etc/mealie/data 
             name: mealie-data-pvc 
