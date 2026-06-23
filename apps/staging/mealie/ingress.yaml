@@ -13,6 +13,6 @@ spec:
               service:
                 name: mealie
                 port:
-                  number: 8080
+                  number: 9000
             path: /
             pathType: Prefix
