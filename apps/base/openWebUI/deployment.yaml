@@ -27,7 +27,7 @@ spec:
             memory: "3Gi"
         env:
         - name: OLLAMA_BASE_URL
-          value: "http://ollama-srv:11434"
+          value: "http://ollama-gpu:11434"
         tty: true
         volumeMounts:
         - name: webui-volume
