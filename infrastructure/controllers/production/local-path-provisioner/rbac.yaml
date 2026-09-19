@@ -14,8 +14,36 @@ rules:
       - ""
     resources:
       - nodes
-      - persistentvolumeclaims
+    verbs:
+      - get
+      - list
+      - watch
+
+  - apiGroups:
+      - ""
+    resources:
       - persistentvolumes
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - delete
+
+  - apiGroups:
+      - ""
+    resources:
+      - persistentvolumeclaims
+    verbs:
+      - get
+      - list
+      - watch
+      - update
+      - patch
+
+  - apiGroups:
+      - ""
+    resources:
       - pods
     verbs:
       - get
@@ -23,8 +51,13 @@ rules:
       - watch
       - create
       - delete
-      - patch
-      - update
+
+  - apiGroups:
+      - ""
+    resources:
+      - configmaps
+    verbs:
+      - get
 
   - apiGroups:
       - ""
@@ -42,13 +75,6 @@ rules:
       - get
       - list
       - watch
-
-  - apiGroups:
-      - ""
-    resources:
-      - pods/log
-    verbs:
-      - get
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
